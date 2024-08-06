@@ -1,0 +1,91 @@
+// Prisma : 
+//   # Prisma is an ORM (Object-Relational Mapping) tool for Node.js and TypeScript, used to interact with databases.
+//   # User: This is the name of the model. In this case, it represents a user entity in the database.
+//     # id: This field represents the unique identifier for each user. It's of type String, and it's marked with several decorators:
+//         -> @id: Marks this field as the primary key.
+//         -> @default(auto()): Automatically generates a value for this field when a new user is created.
+//         -> @map("_id"): Maps this field to the "_id" field in the database. This is useful when integrating with databases like MongoDB, where the primary key field is often named "_id".
+//         -> @db.ObjectId: Specifies that the value of this field should be stored as an ObjectId in the database. This is specifically for MongoDB.
+//     # email: Represents the email address of the user. It's of type String and marked as @unique, meaning each email address must be unique across all users.
+//     # username: Represents the username of the user. It's of type String and marked as @unique, meaning each username must be unique across all users.
+//     # password: Represents the password of the user. It's of type String.
+//     # avatar: Represents the avatar of the user. It's of type String and is optional (nullable), indicated by the "?" symbol.
+//     # createdAt: Represents the timestamp when the user was created. It's of type DateTime and marked with @default(now()), meaning it will default to the current timestamp when a new user is created.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id         String      @id @default(auto()) @map("_id") @db.ObjectId
+  email      String      @unique
+  username   String      @unique
+  password   String
+  avatar     String?
+  createdAt  DateTime    @default(now())
+  posts      Post[]
+  savedPosts SavedPost[]
+
+}
+
+model Post {
+  id         String      @id @default(auto()) @map("_id") @db.ObjectId
+  title      String
+  price      Int
+  images     String[]
+  address    String
+  city       String
+  bedroom    Int
+  bathroom   Int
+  latitude   String
+  longitude  String
+  type       Type
+  property   Property
+  createdAt  DateTime    @default(now())
+  user       User        @relation(fields: [userId], references: [id])
+  userId     String      @db.ObjectId
+  postDetail PostDetail?
+  savedPosts SavedPost[]
+}
+
+enum Type {
+  buy
+  rent
+}
+
+enum Property {
+  apartment
+  house
+  condo
+  land
+}
+
+model PostDetail {
+  id         String  @id @default(auto()) @map("_id") @db.ObjectId
+  desc       String
+  utilities  String?
+  pet        String?
+  income     String?
+  size       Int?
+  school     Int?
+  bus        Int?
+  restaurant Int?
+  post       Post    @relation(fields: [postId], references: [id])
+  postId     String  @unique @db.ObjectId
+}
+
+model SavedPost {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  user      User     @relation(fields: [userId], references: [id])
+  post      Post     @relation(fields: [postId], references: [id])
+  userId    String   @db.ObjectId @unique
+  postId    String   @db.ObjectId @unique
+  createdAt DateTime @default(now())
+
+  @@unique([userId, postId])
+}
