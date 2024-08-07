@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const apiRequest = axios.create({
-    baseURL: import.meta.env.VITE_BACKEND_URL,
+    baseURL: "https://easy-estate-finder-api.onrender.com",
     withCredentials: true,
 });
 
