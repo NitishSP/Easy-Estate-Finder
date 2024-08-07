@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const apiRequest = axios.create({
-    baseURL: "https://easy-estate-finder-backend.onrender.com/api",
+    baseURL: "http://localhost:8800/api",
     withCredentials: true,
 });
 
