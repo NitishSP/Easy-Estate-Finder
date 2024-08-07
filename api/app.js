@@ -9,7 +9,6 @@ import userRoute from './routes/user.route.js';
 
 
 const app = express();
-const port = process.env.PORT || 8800;
 dotenv.config();
 
 app.use(cors({origin: process.env.CLIENT_URL, credentials: true}))
@@ -21,6 +20,7 @@ app.use("/api/users", userRoute);
 app.use("/api/posts", postRoute);
 app.use("/api/test", testRoute);
 
+const port = 8800;
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 })
