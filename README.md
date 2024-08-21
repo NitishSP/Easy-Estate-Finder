@@ -54,11 +54,13 @@ To run this project locally, follow these steps:
    ```bash
    cd client
    npm run dev
+   ```
 
    - Start the API server
    ```bash
    cd api
    node app.js
+   ```
 
 ## Screenshot
 
