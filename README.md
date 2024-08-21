@@ -27,3 +27,38 @@ To run this project locally, follow these steps:
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/NitishSP/Easy-Estate-Finder.git
+2. **Go to api directory and install dependencies**:
+   ```bash
+   cd Easy Estate Finder
+   cd api
+   npm install
+3. **Go to client directory and install dependencies**:
+   ```bash
+   cd Easy Estate Finder
+   cd client
+   npm install
+4. **Create a .env file in the api directory and add the following**:
+   DATABASE_URL=<Your MongoDB Atlas URL>
+   JWT_SECRET_KEY=<Your JWT Secret Key>
+   CLIENT_URL=<Your Client URL>
+5. **Set up Prisma**:
+    ```bash
+   cd api
+   npx prisma db push
+6. **Run the application**:
+   - Start the client
+   ```bash
+   cd client
+   npm run dev
+
+   - Start the API server
+   ```bash
+   cd api
+   node app.js
+
+## Screenshot
+
+## Author
+- Nitish Singh
+   
+
