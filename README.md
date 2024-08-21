@@ -63,6 +63,21 @@ To run this project locally, follow these steps:
    ```
 
 ## Screenshot
+**Home Page**
+![Screenshot 2024-08-21 160234](https://github.com/user-attachments/assets/98819efd-215e-4f69-a2d2-a02c00244d84)
+
+**All Posts - Search Here**
+![Screenshot 2024-08-21 160312](https://github.com/user-attachments/assets/05085f30-83d8-42c5-84ce-dcdc24ace0e3)
+
+**Profile Page**
+![Screenshot 2024-08-21 160335](https://github.com/user-attachments/assets/253c8242-7c80-413c-b791-2ec59a36183c)
+
+**Post View Page**
+![Screenshot 2024-08-21 160404](https://github.com/user-attachments/assets/f689ec9d-6123-4648-bb7f-f00840ea63ad)
+
+**Add Post Page**
+![Screenshot 2024-08-21 160435](https://github.com/user-attachments/assets/455d5786-92e6-4689-a7e2-ebd0810a0df2)
+
 
 ## Author
 - [Nitish Singh](https://github.com/NitishSP)
