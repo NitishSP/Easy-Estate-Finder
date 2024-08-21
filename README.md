@@ -38,14 +38,18 @@ To run this project locally, follow these steps:
    cd client
    npm install
 4. **Create a .env file in the api directory and add the following**:
+   ```
    DATABASE_URL=<Your MongoDB Atlas URL>
    JWT_SECRET_KEY=<Your JWT Secret Key>
    CLIENT_URL=<Your Client URL>
-5. **Set up Prisma**:
+   ```
+   
+6. **Set up Prisma**:
     ```bash
    cd api
    npx prisma db push
-6. **Run the application**:
+    
+7. **Run the application**:
    - Start the client
    ```bash
    cd client
@@ -59,6 +63,7 @@ To run this project locally, follow these steps:
 ## Screenshot
 
 ## Author
-- Nitish Singh
+- [Nitish Singh](https://github.com/NitishSP)
+- [Linkedin](https://www.linkedin.com/in/nitishsp/)
    
 
