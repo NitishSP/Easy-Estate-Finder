@@ -1,0 +1,29 @@
+# Easy Estate Finder - Real Estate Platform for Property Listings and Searches
+
+## Description
+
+**Easy Estate Finder** is a full-stack web application designed to simplify the process of finding and listing real estate properties. Whether you're looking to buy or rent a property, this platform provides an intuitive interface for users to search, create listings, and manage their profiles. It targets users who want to explore properties based on various criteria like location, price, property type, and more.
+
+## Features
+
+- **Property Search**: Filter properties by type (rent or buy), location, price range, property type (condo, house, land, apartment), and number of bedrooms.
+- **User Authentication**: Sign up, log in, and log out with ease. Update profile information such as email, username, password, and profile picture.
+- **Map Integration**: View property locations on a map using Leaflet.
+- **Property Management**: Users can create property listings, upload images, view details, and save listings to their profiles.
+- **User Listings**: A dedicated section for users to view all their created property listings.
+
+## Tech Stack
+
+- **Frontend**: React, Sass, React Router DOM, Axios, Leaflet, React Quill
+- **Backend**: Node.js, Express, Prisma, MongoDB Atlas
+- **Authentication**: Bcrypt, JSON Web Token (JWT), Cookie-Parser
+- **Image Handling**: Upload Widget, Cloudinary
+- **Others**: CORS
+
+## Installation
+
+To run this project locally, follow these steps:
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/NitishSP/Easy-Estate-Finder.git
