@@ -3,7 +3,6 @@ import "./navbar.scss";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 
-
 function Navbar() {
   const [open, setOpen] = useState(false);
 
@@ -26,7 +25,7 @@ function Navbar() {
             <img src={currentUser.avatar || "/noavatar.jpg"} alt="" />
             <span>{currentUser.username}</span>
             <Link to={"/profile"} className="profile">
-                <span>Profile</span>
+              <span>Profile</span>
             </Link>
           </div>
         ) : (
@@ -48,11 +47,15 @@ function Navbar() {
 
         <div className={open ? "menu active" : "menu"}>
           <Link to={"/"}>Home</Link>
-          <Link to={"/"}>About</Link>
-          <Link to={"/"}>Contact</Link>
-          <Link to={"/"}>Agents</Link>
-          <Link to={"/"}>Sign In</Link>
-          <Link to={"/"}>Sign Up</Link>
+          <Link to={"/list"}>Search</Link>
+          {currentUser ? (
+            <Link to={"/profile"}>Profile</Link>
+          ) : (
+            <>
+              <Link to={"/login"}>Sign In</Link>
+              <Link to={"/register"}>Sign Up</Link>
+            </>
+          )}
         </div>
       </div>
     </nav>
